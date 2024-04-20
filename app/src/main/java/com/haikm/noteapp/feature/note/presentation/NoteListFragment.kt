@@ -16,7 +16,6 @@ import com.haikm.noteapp.feature.note.data.StaticNoteRepository
 class NoteListFragment : Fragment() {
     private var _binding: FragmentNoteListBinding? = null
     private val binding get() = _binding!!
-    private val noteRepository by lazy { StaticNoteRepository() }
     private val noteAdapter by lazy { NoteAdapter() }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,7 +67,7 @@ class NoteListFragment : Fragment() {
             setOnItemClick {
                 navigateToDetail(it)
             }
-            submitList(noteRepository.getAllNotes())
+            submitList(StaticNoteRepository.getAllNotes())
         }
         binding.rvListNote.adapter = noteAdapter
     }

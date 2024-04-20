@@ -19,7 +19,7 @@
         android:id="@+id/ivDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:padding="8dp"
         app:layout_constraintEnd_toStartOf="@id/ivShare"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,7 +39,7 @@
         android:id="@+id/tvTitleNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:paddingHorizontal="8dp"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -60,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
+        android:paddingHorizontal="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDateCreate">
 
@@ -70,8 +71,11 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/primary_color"
         android:text="@string/text_save"
         android:textColor="@color/white"
@@ -80,5 +84,6 @@
         app:icon="@drawable/ic_check"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.Circular" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 package com.haikm.noteapp.feature.note.data
 
+import android.util.Log
 import com.haikm.noteapp.feature.note.domain.Note
 import com.thedeanda.lorem.LoremIpsum
 import java.util.Date
+import kotlin.math.log
 
-class StaticNoteRepository : NoteRepository {
+object StaticNoteRepository : NoteRepository {
     private val notes = mutableListOf<Note>()
 
     init {

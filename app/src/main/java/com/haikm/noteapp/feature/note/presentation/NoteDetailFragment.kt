@@ -20,9 +20,8 @@ class NoteDetailFragment : Fragment() {
 
     private var _binding: FragmentNoteDetailBinding? = null
     private val binding get() = _binding!!
-    private val note by lazy { repository.getNoteById(arguments?.getInt(ARG_ID)) }
+    private val note by lazy { StaticNoteRepository.getNoteById(arguments?.getInt(ARG_ID)) }
     private val noteId by lazy { arguments?.getInt(ARG_ID) }
-    private val repository by lazy { StaticNoteRepository() }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -58,10 +57,15 @@ class NoteDetailFragment : Fragment() {
                 parentFragmentManager.popBackStack()
             }
             ivDelete.setOnClickListener {
-                noteId?.let { id -> repository.deleteNoteById(id) }
+                noteId?.let { id -> StaticNoteRepository.deleteNoteById(id) }
+                parentFragmentManager.popBackStack()
             }
             ivShare.setOnClickListener {
                 Toast.makeText(requireContext(), "Click Share", Toast.LENGTH_SHORT).show()
+            }
+            fabSave.setOnClickListener {
+                Toast.makeText(requireContext(), "Click Save", Toast.LENGTH_SHORT).show()
+                parentFragmentManager.popBackStack()
             }
         }
     }
