@@ -18,7 +18,7 @@ object StaticNoteRepository : NoteRepository {
         repeat(10) {
             val title = lorem.getWords(3)
             val content = lorem.getParagraphs(2, 4)
-            notes.add(Note(it, title, content, Date(), Date()))
+            notes.add(Note(it.toLong(), title, content, Date(), Date()))
         }
     }
 
@@ -37,17 +37,17 @@ object StaticNoteRepository : NoteRepository {
     }
 
     override fun getAllNotes(): List<Note> {
-        return notes.toList()
+        return notes.toList().reversed()
     }
 
-    override fun deleteNoteById(noteId: Int) {
+    override fun deleteNoteById(noteId: Long) {
         val note = notes.find { it.id == noteId }
         note?.let {
             notes.remove(it)
         }
     }
 
-    override fun getNoteById(noteId: Int?): Note? {
+    override fun getNoteById(noteId: Long?): Note? {
         noteId?: return null
         return notes.find { it.id == noteId }
     }

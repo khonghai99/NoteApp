@@ -3,4 +3,7 @@
     <string name="text_create_acc">"Don\’t have an account? "</string>
     <string name="text_sign_up">Sign up</string>
     <string name="text_save">Save</string>
+    <string name="text_add_note">Add Notes</string>
+    <string name="text_title">Title</string>
+    <string name="text_your_note_here">Your note here</string>
 </resources>

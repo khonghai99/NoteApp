@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -38,12 +39,12 @@ class NoteListFragment : Fragment() {
                 navigateToAddNew()
             }
             ivIdea.setOnClickListener {
-                // TODO:
+                Toast.makeText(requireContext(), "Click idea", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun navigateToDetail(id: Int) {
+    private fun navigateToDetail(id: Long) {
         parentFragmentManager.commit {
             replace<NoteDetailFragment>(
                 R.id.fragmentContainer, tag = "NoteDetailFragment",
@@ -58,7 +59,9 @@ class NoteListFragment : Fragment() {
 
     private fun navigateToAddNew() {
         parentFragmentManager.commit {
-//            replace<>()
+            replace<NoteAddFragment>(R.id.fragmentContainer, tag = "NoteAddFragment")
+            setReorderingAllowed(true)
+            addToBackStack("NoteAddFragment")
         }
     }
 

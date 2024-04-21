@@ -19,8 +19,8 @@ class NoteAdapter : ListAdapter<Note, NoteAdapter.NoteViewHolder>(DiffNote()) {
         }
     }
 
-    private var onItemClick: (id: Int) -> Unit = { /* no-op */ }
-    fun setOnItemClick(onClick: (id: Int) -> Unit) = apply { this.onItemClick = onClick }
+    private var onItemClick: (id: Long) -> Unit = { /* no-op */ }
+    fun setOnItemClick(onClick: (id: Long) -> Unit) = apply { this.onItemClick = onClick }
 
     inner class NoteViewHolder(private val binding: LayoutItemNoteBinding) :
         RecyclerView.ViewHolder(binding.root) {

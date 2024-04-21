@@ -20,8 +20,8 @@ class NoteDetailFragment : Fragment() {
 
     private var _binding: FragmentNoteDetailBinding? = null
     private val binding get() = _binding!!
-    private val note by lazy { StaticNoteRepository.getNoteById(arguments?.getInt(ARG_ID)) }
-    private val noteId by lazy { arguments?.getInt(ARG_ID) }
+    private val note by lazy { StaticNoteRepository.getNoteById(arguments?.getLong(ARG_ID)) }
+    private val noteId by lazy { arguments?.getLong(ARG_ID) }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
