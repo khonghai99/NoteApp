@@ -6,4 +6,6 @@
     <string name="text_add_note">Add Notes</string>
     <string name="text_title">Title</string>
     <string name="text_your_note_here">Your note here</string>
+    <string name="text_no_notes_found">No notes found</string>
+    <string name="text_content_empty">When you add a notes. You will see your notes here</string>
 </resources>
